@@ -43,7 +43,7 @@ const Room = () => {
             <hr />
             <Link to="/login">Login</Link>
             <Link to = "/signup">SignUp</Link>
-            <button onClick={() => firebase.auth().signOut()}>LOGOUT</button>
+            <button onClick={() => firebase.auth().signOut()}>ログアウト</button>
         </>
 
     )
