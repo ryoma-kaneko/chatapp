@@ -1,8 +1,11 @@
 //新規登録画面
-import React,{useState} from 'react'
+import React, { useState, useContext} from 'react'
 import firebase from '../config/firebase'
+import { AuthContext } from '../AuthService'
+import { Redirect } from 'react-router-dom'
 
 const SignUp = () => {
+    const [name,setName] = useState('')
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
 
@@ -12,10 +15,10 @@ const SignUp = () => {
         .catch(err => {
             alert(err)
         })
-
-        
-
-
+    }
+    const user = useContext(AuthContext)
+    if (user) {
+        return <Redirect to="/login" />
     }
 
     return (
